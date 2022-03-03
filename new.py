@@ -69,12 +69,14 @@ print(r)
 l = [1,2,3,4,2,3,4]
 filtered_result = filter(lambda x: (l.count(x))==1, l) 
 filtered_result12 = filter(lambda x: (l.count(x))>1, l) 
+# optimise
 ht =[]
 filtered_result45 = lambda x: (x not in ht)
 filtered_result56 =lambda x: (x in ht)
 # ht = []
 rt = list(map(lambda n :ht.append(n) if filtered_result45(n) else ht.append(-1),l))
 print("rtttt---------",rt, ht)
+#optimise result
 d = map(lambda a:(-1,a)[a not in r],l)
 # print("==========dmap",list(d),r)
 # filtered_result123 = list(map(lambda x:(0,-1) [l.count(x)>1], l))
