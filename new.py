@@ -74,8 +74,16 @@ ht =[]
 filtered_result45 = lambda x: (x not in ht)
 filtered_result56 =lambda x: (x in ht)
 # ht = []
-rt = list(map(lambda n :ht.append(n) if filtered_result45(n) else ht.append(-1),l))
+rt = list(map(lambda n :ht.append(n) if n not in ht else ht.append(-1),l))
+#this below also works
+# rt = list(map(lambda n :ht.append(n) if filtered_result45(n) else ht.append(-1),l))
+# rt = list(map(lambda n :(ht.append(n),ht.append(-1)) [filtered_result45(n)==True],l))
+# rt = map(lambda n :ht.append(n) if filtered_result45(n) else ht.append(-1),l)
 print("rtttt---------",rt, ht)
+l = [1,2,3,4,2,3,4]
+l2 = [11,22,33,44,32,324,54,67]
+k = map(lambda x,y:(x+y), l,l2)
+print(list(k))
 #optimise result
 d = map(lambda a:(-1,a)[a not in r],l)
 # print("==========dmap",list(d),r)
