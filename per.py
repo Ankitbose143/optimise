@@ -6,7 +6,8 @@ def mydec(f):
     def wrapper(a,b):
         a= a.capitalize()
         b= b.capitalize()
-        return f(a, b)
+        f(a,b)
+        # return f(a, b)
     return wrapper
 
 @mydec
@@ -33,7 +34,8 @@ str_ = "ABCDEFGHIJKLMNOPQRSTUVWX"
 p = 0
 # print("STR_",str_)
 for t in range(0,len(str_),4):
-    print("STR_",str_[t:t+4])
+    # print(t)
+    print("STR_",t,str_[t:t+4])
 #     if t%4==0:
 #         # p = t
     
@@ -50,6 +52,13 @@ rangf = range(len(f))
 rangfy = range(1,len(f))
 # d = list(filter(lambda x,y:f[x]+f[y]==k, (rangf, rangfy)))
 # print("sum--------------g", range, enumerate(f))
+# print(f[1:])
+for y in f:
+    # print(g,y)
+    if k-y in f:
+        print("sum--------------12gwqqw, f[y]",y,f[f.index(k-y)])
+        break
+    g= y
 for y in range(1,len(f)):
     if g+f[y]==k:
         print("sum--------------g, f[y]",g,f[y])
@@ -103,5 +112,12 @@ for y in drt:
     lo.append(y[0])
 
 print("LO====",lo)
+
+# df.groupby(['job','source']).agg({'count':sum})
+
+# df.groupby(['job']).apply(lambda x: (x.groupby('source')
+#                                       .sum()
+#                                       .sort_values('count', ascending=False))
+#                                      .head(3))
 
             
